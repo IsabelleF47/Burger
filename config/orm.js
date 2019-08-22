@@ -29,8 +29,8 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+      // e.g. {name: 'Krabby Patty'} => ["name='Krabby Patty'"]
+      // e.g. {eaten: true} => ["eaten=true"]
       arr.push(key + "=" + value);
     }
   }
