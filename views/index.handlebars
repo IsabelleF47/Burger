@@ -2,20 +2,27 @@
 
 <h2>Create and eat delicious burgers!</h2>
 
-<ul>
+<h2>The variety is endless!</h2>
+
+<ul id="uneaten-burger">
   {{#each burgers}}
-    {{#unless eaten}}
-      {{burgers/burger-block eaten=true}}
+    {{#unless this.eaten}}
+      
+        <div class="col-md-6 text-center ">
+          <pre>  {{ this.id}} .{{this.name }} </pre>
+        <button class="uneaten-button" type="submit" >Eat it!</button>
+        </div>
+        
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>The variety is endless!</h2>
 
-<ul>
+<ul id="eaten-burgers">
   {{#each burgers}}
-    {{#if eaten}}
-      {{burgers/burger-block eaten=false}}
+    {{#if this.eaten}}
+    <pre> {{this.id}} . {{this.name}}</pre>
+     <button type="submit" >Coming back soon!</button>
     {{/if}}
   {{/each}}
 </ul>
@@ -28,11 +35,7 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="eaten">Eat da burger</label><br>
-    <input type="radio" name="eaten" value="1" checked> Eaten<br>
-    <input type="radio" name="eaten" value="0"> Still avaliable for da eating
-  </div>
+
 
   <button type="submit">Add Burger</button>
-</form>
+

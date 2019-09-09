@@ -1,9 +1,12 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
-  $(".change-eaten").on("click", function(event) {
+console.log("page load");
+$(document.body).on("submit", "#messageForm", function() {alert();});
+  $(".uneaten-button").on("click", function(event) {
+   event.preventDefault();
+   console.log("clicked");
     var id = $(this).data("id");
     var newEaten = $(this).data("neweaten");
-
+  console.log(id,newEaten)
     var newEatenBurger = {
       eaten: newEaten
     };
@@ -57,4 +60,4 @@ $(function() {
       }
     );
   });
-});
+
